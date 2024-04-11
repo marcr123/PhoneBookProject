@@ -29,6 +29,7 @@ CongressPerson::CongressPerson(string firstName, string lastName, string phoneNu
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->phoneNumber = phoneNumber;
+	hello
 }
 
 void CongressPerson::Display()
