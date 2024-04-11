@@ -9,7 +9,7 @@ CongressPerson::CongressPerson()
 	firstName = "n/a";
 	lastName = "n/a";
 	phoneNumber = "xxx-xxx-xxxx";
-	middleName =	
+	middleName =	enny
 	suffix,
 	nickname, 
 	fullName, 
