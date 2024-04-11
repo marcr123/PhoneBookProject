@@ -10,12 +10,12 @@ CongressPerson::CongressPerson()
 	lastName = "n/a";
 	phoneNumber = "xxx-xxx-xxxx";
 	middleName = "n/a"
-	suffix =
-	nickname, 
-	fullName, 
-	birthday, 
-	gender,
-	type, 
+	suffix = "n/a"
+	nickname ="n/a"
+	fullName ="n/a"
+	birthday ="n/a"
+	gender = "n/a"
+	type = "n/a"
 	state, 
 	district, 
 	senateClass,
