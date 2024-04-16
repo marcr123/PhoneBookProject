@@ -7,82 +7,65 @@
 
 using namespace std;
 
-void addToPhoneBook(PhoneBook& x) {
+PhoneBook Contacts;
 
-	string fn;
-	string ln;
-	string pn;
-
-	cout << "Insert first name:\n";
-	cin >> fn;
-	cout << "Insert last name:\n";
-	cin >> ln;
-	cout << "Insert phone number\n";
-	cin >> pn;
-
-	CongressPerson addPerson(fn, ln, pn);
-
-	x.Add(addPerson);
-
+ifstream inFile("CongressContacts.txt");
+if (!inFile.is_open()) {
+	cout << "File not found" << endl;
+	exit(1);
 }
 
+string last_name, first_name, middle_name, sfx,
+	nickname, full_name, bty, gd,
+	tp, st, dst, senate_class, pt,
+	URL, adds, ph,header;
 
-int main(int argc, char* argv[]) {
+getline(inFile, header);
+cout << header;
 
-	ifstream inFile("CongressContacts.txt");
-	if (!inFile.is_open()) {
-		cout << "File not found" << endl;
-		exit(1);
-	}
-	string last_name, first_name, middle_name, suffix,
-		nickname, full_name, birthday, gender,
-		type, state, district, senate_class, party,
-		url, address, phone;
-	string header;
-	getline(inFile, header);
-	while (!inFile.eof()) {
-		getline(inFile, last_name, ',');
-		getline(inFile, first_name, ',');
-		getline(inFile, middle_name, ',');
-		getline(inFile, suffix, ',');
-		getline(inFile, nickname, ',');
-		getline(inFile, full_name, ',');
+//reads data into CongressPerson but does not 
+while (!inFile.eof()) {
+	getline(inFile, last_name, ',');
+	getline(inFile, first_name, ',');
+	getline(inFile, middle_name, ',');
+	getline(inFile, sfx, ',');
+	getline(inFile, nickname, ',');
+	getline(inFile, full_name, ',');
+	getline(inFile, bty, ',');
+	getline(inFile, gd, ',');
+	getline(inFile, tp, ',');
+	getline(inFile, st, ',');
+	getline(inFile, dst, ',');
+	getline(inFile, senate_class, ',');
+	getline(inFile, pt, ',');
+	getline(inFile, URL, ',');
+	getline(inFile, adds, ',');
+	getline(inFile, ph);
+	
+	CongressPerson y(last_name, first_name,middle_name, sfx, nickname, full_name,
+	bty, gd, tp, st, dst, senate_class, pt, URL, adds,ph);
+	
+	Contacts.Add(y);
+}
 
-
-	}
-	string answer;
-	PhoneBook P_B;
-
-
-
-
-	P_B.Add(person1);
-	P_B.Add(person2);
-	P_B.Add(person3);
-	P_B.Add(person4);
-	P_B.Add(person5);
-
-
-
-
-	while (answer != "Exit") {
+	while (answer != "4") {
 		cout << "1.Display  2.Add  3.Search  4.Exit  5.Edit  6.PCC  7.POAO\n";
 		cin >> answer;
 		if (answer == "1") {
 			P_B.Display();
 		}
 		else if (answer == "2") {
-			addToPhoneBook(P_B);
+			//addToPhoneBook(P_B);
 		}
-		/*else if (answer == "Search") {
+		/*else if (answer == "3") {
 			string searchForPerson;
 			cin >> searchForPerson;
 			P_B.searchPB(searchForPerson).Display();
 		}*/
-		else if (answer == "PCC") {
+		else if (answer == "7") {
 			cout << "making your copy...\n";
 			PhoneBook testCopy;
-			testCopy = P_B;
+			testCopy = Contacts;
 			cout << "\nOriginal:\n";
 			cout << "\nCopy:\n";
 			testCopy.Display();
