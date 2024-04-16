@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include"Person2.h"
 
 class PhoneBook {
@@ -8,14 +7,15 @@ public:
 	PhoneBook(const PhoneBook& orgCopy);
 	~PhoneBook();
 	void Display();
-	void Add(Person personToAdd);
+	void Add(CongressPerson& personToAdd);
 	PhoneBook& operator = (const PhoneBook& objToCopy);
-	Person searchPB(string search);
-	void bubbleSort(Person* values, int size);
+	void searchPB(string phoneSearch);
+	void bubbleSort(CongressPerson values[], int size);
 private:
-	void searchHelp(Person* arrSearch, int lowVal, int highVal, string FindMatch);
-
-	Person* personArr;
+	CongressPerson* personArr;
 	int numContacts;
 	int capacity;
+
+	//int binarySearch(int lowVal, int highVal, string itemMatch);
+
 };
