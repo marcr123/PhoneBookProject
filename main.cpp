@@ -1,6 +1,6 @@
 #include<iostream>
 #include<fstream>
-#include"CongressPerson.h"
+#include"Person2.h"
 #include"PhoneBook.h"
 #include<string>
 
