@@ -15,6 +15,10 @@ public:
 	void setFirstName(string firstName);
 	void setLastName(string lastName);
 	void setPhoneNumber(string phoneNumber);
+	bool operator < (CongressPerson& rhs )const; //compares phone number
+	bool operator == (CongressPerson& rhs);
+	bool operator >= (const CongressPerson& rhs);
+	CongressPerson& operator = (const CongressPerson& rhs); //copies CongressPerson vals to another CongressPerson
 private:
 	string firstName;
 	string lastName;
