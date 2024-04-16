@@ -68,18 +68,24 @@ void PhoneBook::Display()
 
 void PhoneBook::searchPB(string phoneSearch) 
 {
+	int match;
 	//sort first in order to search for a person
-	cout << "Searching...\n" ;
 	bubbleSort(this->personArr,numContacts);
 
 	//search
-	//binarySearch(numContacts, 0, phoneSearch);
-	
-				
+	cout << "Searching...\n";
+	match = binarySearch(0,numContacts-1,phoneSearch);
+	if (match >= 0) {
+		cout << "Found: "; 
+		this->personArr[match].Display();
+	}
+	else {
+		cout << "not found";
+	}
+					
 }
 
-
-/*int PhoneBook::binarySearch(int lowVal, int highVal, string itemMatch)
+int PhoneBook::binarySearch(int lowVal, int highVal, string itemMatch)
 {
 		int midVal;        // Midpoint of low and high values
 		int itemPos;       // Position where item found, -1 if not found
@@ -104,7 +110,7 @@ void PhoneBook::searchPB(string phoneSearch)
 		}
 
 		return itemPos;
-}*/
+}
 
 //sorting by phone number
 void PhoneBook::bubbleSort(CongressPerson values[], int size)
