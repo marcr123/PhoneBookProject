@@ -53,8 +53,8 @@ int main(int argc, char* argv[]) {
 	}	
 	
 	string answer;
-	while (answer != "4") {
-		cout << "1.Display  2.Add  3.Search  4.Exit  5.Edit  6.PCC  7.POAO\n";
+	while (answer != "8") {
+		cout << "1.Display  2.Add  3.Search  4.Edit  5.Edit  6.PCC  7.POA  8. Exit\n";
 		cin >> answer;
 		if (answer == "1") {
 			Contacts.Display();
