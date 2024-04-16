@@ -13,7 +13,8 @@ public:
 	Person searchPB(string search);
 	void bubbleSort(Person* values, int size);
 private:
-	void searchHelp(Person* arrSearch, int lowVal, int highVal, string itemMatch);
+	void searchHelp(Person* arrSearch, int lowVal, int highVal, string FindMatch);
+
 	Person* personArr;
 	int numContacts;
 	int capacity;
