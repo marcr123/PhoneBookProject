@@ -71,7 +71,7 @@ PhoneBook& PhoneBook::operator = (const PhoneBook& objToCopy)
 }
 
 template<typename TYPE>
-TYPE searchHelp(TYPE arrSearch, int lowVal, int highVal, string itemMatch)
+TYPE searchHelp(TYPE arrSearch, int lowVal, int highVal, string FindMatch)
 {
 		int midVal;        // Midpoint of low and high values
 		int itemPos;       // Position where item found, -1 if not found
